@@ -1,0 +1,127 @@
+/*
+  Variables para mantener consistencia visual y facilitar cambios.
+*/
+:root {
+  --bg-page: #e5e5e5;
+  --bg-card: #ffffff;
+  --text-main: #1f1f1f;
+  --text-soft: #8c8c8c;
+  --border-soft: #d6d6d6;
+  --feed-width: 580px;
+}
+
+/*
+  Reset minimo para evitar diferencias entre navegadores.
+*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+  line-height: 1.35;
+}
+
+/*
+  Header superior centrado horizontalmente.
+*/
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 14px 16px;
+  margin-bottom: 26px;
+}
+
+.header-inner {
+  width: 100%;
+  max-width: var(--feed-width);
+  margin: 0 auto;
+}
+
+.site-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/*
+  Contenedor del feed: centrado y con ancho similar a la referencia.
+*/
+.feed {
+  width: min(100% - 24px, var(--feed-width));
+  margin: 0 auto 28px;
+}
+
+/*
+  Tarjeta de cada publicacion.
+*/
+.post {
+  background: var(--bg-card);
+  border: 1px solid var(--border-soft);
+  border-radius: 6px;
+  margin-bottom: 26px;
+  overflow: hidden;
+}
+
+/*
+  Header del post usando Flexbox para separar titulo y fecha.
+*/
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.post-header h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.post-header time {
+  color: var(--text-soft);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/*
+  Imagen principal ocupando todo el ancho de la tarjeta.
+*/
+.post img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.post p {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+/*
+  Ajustes para pantallas pequenas.
+*/
+@media (max-width: 640px) {
+  .site-header {
+    margin-bottom: 18px;
+  }
+
+  .site-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .post-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .post-header time,
+  .post p {
+    font-size: 0.95rem;
+  }
+}
